@@ -71,7 +71,7 @@ function handleSubmit(e) {
     image: e.target.image.value,
     likes: 0
   }
-  renderNewToy(toyObj)
+
   collectToy(toyObj)
 }
 
@@ -104,7 +104,7 @@ function collectToy(toy) {
   body: JSON.stringify(toy)
   })
   .then(res => res.json())
-  .then(toy => console.log(toy))
+  .then(toy => renderCard(toy))
 }
 
 
@@ -125,5 +125,4 @@ function initialize() {
 }
 
 initialize()
-
 
